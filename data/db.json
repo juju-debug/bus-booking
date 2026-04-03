@@ -1,0 +1,318 @@
+{
+  "trips": [
+    {
+      "id": "trip-001",
+      "busNumber": "KCA 214X",
+      "operator": "Swift Express",
+      "from": "Nairobi",
+      "to": "Mombasa",
+      "departureDate": "2026-04-10",
+      "departureTime": "06:00",
+      "arrivalTime": "12:30",
+      "duration": "6h 30m",
+      "price": 1200,
+      "busType": "Luxury",
+      "amenities": [
+        "AC",
+        "WiFi",
+        "USB Charging",
+        "Reclining Seats",
+        "Onboard Snacks"
+      ],
+      "totalSeats": 44,
+      "layout": {
+        "rows": 11,
+        "seatsPerRow": 4,
+        "aisleAfter": 2
+      },
+      "bookedSeats": [
+        "1A",
+        "1B",
+        "2C",
+        "3A",
+        "3B",
+        "3C",
+        "4D",
+        "5A",
+        "6B",
+        "7C",
+        "8A",
+        "8B",
+        "9D",
+        "10A",
+        "10B",
+        "4A",
+        "4B"
+      ]
+    },
+    {
+      "id": "trip-002",
+      "busNumber": "KDB 512G",
+      "operator": "Coastal Link",
+      "from": "Nairobi",
+      "to": "Mombasa",
+      "departureDate": "2026-04-10",
+      "departureTime": "09:30",
+      "arrivalTime": "16:00",
+      "duration": "6h 30m",
+      "price": 950,
+      "busType": "Standard",
+      "amenities": [
+        "AC",
+        "USB Charging"
+      ],
+      "totalSeats": 44,
+      "layout": {
+        "rows": 11,
+        "seatsPerRow": 4,
+        "aisleAfter": 2
+      },
+      "bookedSeats": [
+        "1A",
+        "2B",
+        "4C",
+        "5D",
+        "6A",
+        "7B",
+        "8C",
+        "9A",
+        "11D"
+      ]
+    },
+    {
+      "id": "trip-003",
+      "busNumber": "KCX 900P",
+      "operator": "Swift Express",
+      "from": "Nairobi",
+      "to": "Kisumu",
+      "departureDate": "2026-04-10",
+      "departureTime": "07:00",
+      "arrivalTime": "13:30",
+      "duration": "6h 30m",
+      "price": 1100,
+      "busType": "Luxury",
+      "amenities": [
+        "AC",
+        "WiFi",
+        "USB Charging",
+        "Reclining Seats"
+      ],
+      "totalSeats": 44,
+      "layout": {
+        "rows": 11,
+        "seatsPerRow": 4,
+        "aisleAfter": 2
+      },
+      "bookedSeats": [
+        "1A",
+        "1B",
+        "1C",
+        "1D",
+        "2A",
+        "2B",
+        "3C",
+        "3D",
+        "5A",
+        "6B",
+        "7A",
+        "7B",
+        "7C",
+        "8D",
+        "9A",
+        "9B",
+        "10C",
+        "11D"
+      ]
+    },
+    {
+      "id": "trip-004",
+      "busNumber": "KDD 330H",
+      "operator": "Rift Valley Shuttles",
+      "from": "Nairobi",
+      "to": "Nakuru",
+      "departureDate": "2026-04-10",
+      "departureTime": "08:00",
+      "arrivalTime": "10:30",
+      "duration": "2h 30m",
+      "price": 600,
+      "busType": "Standard",
+      "amenities": [
+        "AC"
+      ],
+      "totalSeats": 44,
+      "layout": {
+        "rows": 11,
+        "seatsPerRow": 4,
+        "aisleAfter": 2
+      },
+      "bookedSeats": [
+        "2A",
+        "2B",
+        "3C",
+        "4D",
+        "5A",
+        "5B",
+        "5C",
+        "5D"
+      ]
+    },
+    {
+      "id": "trip-005",
+      "busNumber": "KBZ 771J",
+      "operator": "Coastal Link",
+      "from": "Mombasa",
+      "to": "Nairobi",
+      "departureDate": "2026-04-11",
+      "departureTime": "07:00",
+      "arrivalTime": "13:30",
+      "duration": "6h 30m",
+      "price": 1050,
+      "busType": "Standard",
+      "amenities": [
+        "AC",
+        "USB Charging"
+      ],
+      "totalSeats": 44,
+      "layout": {
+        "rows": 11,
+        "seatsPerRow": 4,
+        "aisleAfter": 2
+      },
+      "bookedSeats": [
+        "1A",
+        "1C",
+        "3B",
+        "4A",
+        "4D",
+        "6C",
+        "8B",
+        "10A"
+      ]
+    },
+    {
+      "id": "trip-006",
+      "busNumber": "KCE 100F",
+      "operator": "Swift Express",
+      "from": "Kisumu",
+      "to": "Nairobi",
+      "departureDate": "2026-04-11",
+      "departureTime": "06:30",
+      "arrivalTime": "13:00",
+      "duration": "6h 30m",
+      "price": 1100,
+      "busType": "Luxury",
+      "amenities": [
+        "AC",
+        "WiFi",
+        "USB Charging",
+        "Reclining Seats",
+        "Onboard Snacks"
+      ],
+      "totalSeats": 44,
+      "layout": {
+        "rows": 11,
+        "seatsPerRow": 4,
+        "aisleAfter": 2
+      },
+      "bookedSeats": [
+        "1A",
+        "2B",
+        "3C",
+        "4D",
+        "5A",
+        "6B",
+        "7C",
+        "8D"
+      ]
+    },
+    {
+      "id": "trip-007",
+      "busNumber": "KDA 420M",
+      "operator": "Rift Valley Shuttles",
+      "from": "Nakuru",
+      "to": "Nairobi",
+      "departureDate": "2026-04-11",
+      "departureTime": "10:00",
+      "arrivalTime": "12:30",
+      "duration": "2h 30m",
+      "price": 600,
+      "busType": "Standard",
+      "amenities": [
+        "AC"
+      ],
+      "totalSeats": 44,
+      "layout": {
+        "rows": 11,
+        "seatsPerRow": 4,
+        "aisleAfter": 2
+      },
+      "bookedSeats": [
+        "3A",
+        "3B",
+        "4C",
+        "5D",
+        "6A",
+        "6B"
+      ]
+    },
+    {
+      "id": "trip-008",
+      "busNumber": "KCB 660S",
+      "operator": "Nairobi Express",
+      "from": "Nairobi",
+      "to": "Eldoret",
+      "departureDate": "2026-04-12",
+      "departureTime": "08:30",
+      "arrivalTime": "13:30",
+      "duration": "5h 00m",
+      "price": 900,
+      "busType": "Luxury",
+      "amenities": [
+        "AC",
+        "WiFi",
+        "USB Charging",
+        "Reclining Seats"
+      ],
+      "totalSeats": 44,
+      "layout": {
+        "rows": 11,
+        "seatsPerRow": 4,
+        "aisleAfter": 2
+      },
+      "bookedSeats": [
+        "1A",
+        "1B",
+        "2A",
+        "2B",
+        "3C",
+        "3D",
+        "4A",
+        "4B",
+        "4C",
+        "4D",
+        "5A",
+        "5B"
+      ]
+    }
+  ],
+  "bookings": [
+    {
+      "id": "792a239d-7c95-42bf-82f7-b097c445d6d3",
+      "bookingRef": "BK-RJ8A4YK3",
+      "tripId": "trip-001",
+      "passenger": {
+        "name": "jsjsj",
+        "idNumber": "3232232",
+        "phone": "0783838292",
+        "email": "jkana@gmail.com"
+      },
+      "seats": [
+        "4A",
+        "4B"
+      ],
+      "status": "confirmed",
+      "createdAt": "2026-04-03T10:18:48.349Z",
+      "totalAmount": 2400
+    }
+  ]
+}
