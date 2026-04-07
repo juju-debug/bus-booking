@@ -16,7 +16,7 @@ export default function Footer() {
               <span className="font-display font-bold text-lg text-white">Swift<span className="text-gradient">Ride</span></span>
             </div>
             <p className="text-slate-500 text-sm max-w-xs leading-relaxed">
-              Kenya's most reliable bus seat booking platform. Travel with confidence, comfort, and clarity.
+              Kenya&apos;s most reliable bus seat booking platform. Travel with confidence, comfort, and clarity.
             </p>
             <p className="text-slate-600 text-xs mt-4">
               Payment is made at the bus station before boarding. No online payment required.

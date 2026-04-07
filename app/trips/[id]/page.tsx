@@ -33,7 +33,7 @@ export default function TripDetailPage() {
       .then((r) => r.json())
       .then((data) => { setTrip(data); setLoading(false); })
       .catch(() => { showToast("Failed to load trip.", "error"); setLoading(false); });
-  }, [id]);
+  }, [id, showToast]);
 
   function toggleSeat(seat: string) {
     setSelectedSeats((prev) =>

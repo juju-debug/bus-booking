@@ -1,14 +1,42 @@
 "use client";
-import { useEffect, useState, Suspense } from "react";
-import { useSearchParams, useRouter } from "next/navigation";
+import { useEffect, useState, Suspense, useCallback } from "react";
+import { useSearchParams } from "next/navigation";
 import TripCard from "@/components/TripCard";
 import { Trip } from "@/lib/types";
 
-const CITIES = ["", "Nairobi", "Mombasa", "Kisumu", "Nakuru", "Eldoret"];
+const CITIES = [
+  "",
+  "Nairobi",
+  "Nairobi (CBD)",
+  "Nairobi (Westlands)",
+  "Nairobi (Embakasi)",
+  "Nairobi (Eastleigh)",
+  "Nairobi (Kasarani)",
+  "Nairobi (Karen)",
+  "Mombasa",
+  "Kisumu",
+  "Nakuru",
+  "Eldoret",
+  "Kisii",
+  "Thika",
+  "Machakos",
+  "Naivasha",
+  "Nyeri",
+  "Meru",
+  "Embu",
+  "Nanyuki",
+  "Kericho",
+  "Kitale",
+  "Kakamega",
+  "Bungoma",
+  "Narok",
+  "Voi",
+  "Malindi",
+  "Garissa",
+];
 
 function TripsContent() {
   const searchParams = useSearchParams();
-  const router = useRouter();
 
   const [trips, setTrips] = useState<(Trip & { availableSeats: number })[]>([]);
   const [loading, setLoading] = useState(false);
@@ -20,7 +48,7 @@ function TripsContent() {
   const [busType, setBusType] = useState("All");
   const [sortBy, setSortBy] = useState("time");
 
-  async function fetchTrips() {
+  const fetchTrips = useCallback(async (sortOverride?: string) => {
     setLoading(true);
     setSearched(true);
     const params = new URLSearchParams();
@@ -33,9 +61,10 @@ function TripsContent() {
       const res = await fetch(`/api/trips?${params}`);
       let data = await res.json();
 
-      if (sortBy === "price") data = data.sort((a: Trip, b: Trip) => a.price - b.price);
-      else if (sortBy === "time") data = data.sort((a: Trip, b: Trip) => a.departureTime.localeCompare(b.departureTime));
-      else if (sortBy === "seats") data = data.sort((a: any, b: any) => b.availableSeats - a.availableSeats);
+      const sort = sortOverride ?? sortBy;
+      if (sort === "price") data = data.sort((a: Trip, b: Trip) => a.price - b.price);
+      else if (sort === "time") data = data.sort((a: Trip, b: Trip) => a.departureTime.localeCompare(b.departureTime));
+      else if (sort === "seats") data = data.sort((a: any, b: any) => b.availableSeats - a.availableSeats);
 
       setTrips(data);
     } catch {
@@ -43,15 +72,12 @@ function TripsContent() {
     } finally {
       setLoading(false);
     }
-  }
+  }, [busType, date, from, sortBy, to]);
 
-  // Auto-search if coming from homepage with params
+  // Show trips by default (and still supports query params)
   useEffect(() => {
-    if (searchParams.get("from") || searchParams.get("to")) {
-      fetchTrips();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    fetchTrips();
+  }, [fetchTrips]);
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -115,7 +141,7 @@ function TripsContent() {
                 {["time", "price", "seats"].map((s) => (
                   <button
                     key={s}
-                    onClick={() => { setSortBy(s); fetchTrips(); }}
+                    onClick={() => { setSortBy(s); fetchTrips(s); }}
                     className={`text-xs px-3 py-1 rounded-lg transition-colors capitalize ${sortBy === s ? "bg-orange-500/20 text-orange-400 border border-orange-500/30" : "btn-ghost"}`}
                   >
                     {s}
