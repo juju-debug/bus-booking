@@ -44,8 +44,6 @@ function TripsContent() {
 
   const [from, setFrom] = useState(searchParams.get("from") || "");
   const [to, setTo] = useState(searchParams.get("to") || "");
-  const [date, setDate] = useState(searchParams.get("date") || "");
-  const [busType, setBusType] = useState("All");
   const [sortBy, setSortBy] = useState("time");
 
   const fetchTrips = useCallback(async (sortOverride?: string) => {
@@ -54,8 +52,6 @@ function TripsContent() {
     const params = new URLSearchParams();
     if (from) params.set("from", from);
     if (to) params.set("to", to);
-    if (date) params.set("date", date);
-    if (busType !== "All") params.set("busType", busType);
 
     try {
       const res = await fetch(`/api/trips?${params}`);
@@ -72,7 +68,7 @@ function TripsContent() {
     } finally {
       setLoading(false);
     }
-  }, [busType, date, from, sortBy, to]);
+  }, [from, sortBy, to]);
 
   // Show trips by default (and still supports query params)
   useEffect(() => {
@@ -94,7 +90,7 @@ function TripsContent() {
 
       {/* Search form */}
       <form onSubmit={handleSubmit} className="glass rounded-2xl p-6 border border-white/7 mb-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <div>
             <label className="block text-xs text-slate-500 mb-1.5 uppercase tracking-wider">From</label>
             <select className="input-field" value={from} onChange={(e) => setFrom(e.target.value)}>
@@ -105,18 +101,6 @@ function TripsContent() {
             <label className="block text-xs text-slate-500 mb-1.5 uppercase tracking-wider">To</label>
             <select className="input-field" value={to} onChange={(e) => setTo(e.target.value)}>
               {CITIES.map((c) => <option key={c} value={c}>{c || "Any city"}</option>)}
-            </select>
-          </div>
-          <div>
-            <label className="block text-xs text-slate-500 mb-1.5 uppercase tracking-wider">Date</label>
-            <input type="date" className="input-field" value={date} onChange={(e) => setDate(e.target.value)} min={new Date().toISOString().split("T")[0]} />
-          </div>
-          <div>
-            <label className="block text-xs text-slate-500 mb-1.5 uppercase tracking-wider">Bus Type</label>
-            <select className="input-field" value={busType} onChange={(e) => setBusType(e.target.value)}>
-              <option value="All">All Types</option>
-              <option value="Luxury">Luxury</option>
-              <option value="Standard">Standard</option>
             </select>
           </div>
           <div className="flex items-end">
