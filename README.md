@@ -2,14 +2,6 @@
 
 A modern, full-featured bus seat booking web application built with **Next.js 14**, **TypeScript**, and **Tailwind CSS**. Data is persisted in a local **JSON file** — no database required.
 
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Node.js v18 or higher
-- npm v9 or higher
-
 ### Installation
 
 ```bash
@@ -101,20 +93,9 @@ bus-booking/
 ## 💾 Data Storage
 
 All data lives in `data/db.json`:
-- **trips** — pre-seeded with 8 trips across 5 Kenyan routes
-- **bookings** — populated as users book (starts empty)
+**trips** — pre-seeded with 8 trips across 5 Kenyan routes
+**bookings** — populated as users book (starts empty)
 
-No database setup needed.
-
----
-
-## 📦 Submission
-
-1. Delete the `node_modules` folder
-2. Zip the entire `bus-booking` folder
-3. Upload to Blackboard
-
----
 
 ## 🛠 Built With
 
